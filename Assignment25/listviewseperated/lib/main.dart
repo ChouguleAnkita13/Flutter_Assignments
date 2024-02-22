@@ -65,17 +65,20 @@ class _ListViewDemoState extends State<ListViewDemo> {
               children: [
                 const SizedBox(height: 20,),
                 Text(playerList[index]["name"]),
-                ListView.builder(
-                shrinkWrap: true,
-                itemCount:playerList[index]["list"].length,
-                itemBuilder: (context,idx){       
-                  return Container(
-                    width: 400,
-                    height: 200,
-                    margin: const EdgeInsets.all(10),
-                   child :Image.network(playerList[index]["list"][idx])
-                  );
-                }
+                SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount:playerList[index]["list"].length,
+                  itemBuilder: (context,idx){       
+                    return Container(
+                      width: 300,
+                      height: 100,
+                      margin: const EdgeInsets.all(10),
+                     child :Image.network(playerList[index]["list"][idx])
+                    );
+                  }
+                  ),
                 )
               ],
             );
