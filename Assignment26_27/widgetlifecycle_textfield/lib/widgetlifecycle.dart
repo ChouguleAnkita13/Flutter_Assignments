@@ -16,7 +16,6 @@ class _WidgetLifeCycleDemoState extends State<WidgetLifeCycleDemo> {
     super.initState();
     print("In initState");
   }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

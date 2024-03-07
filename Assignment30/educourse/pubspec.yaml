@@ -1,0 +1,36 @@
+name: educourse
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/Group.png
+    - assets/youtube.png
+    - assets/ux.png
+    - assets/design.png
+    - assets/bottom/Traced Image1.png
+    - assets/bottom/Traced Image2.png
+    - assets/bottom/Traced Image3.png
+    - assets/bottom/Traced Image4.png
+
+
+
+    
+
