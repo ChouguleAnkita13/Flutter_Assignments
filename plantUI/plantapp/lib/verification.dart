@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plantapp/home.dart';
 import 'package:plantapp/login.dart';
 
 class Verification extends StatefulWidget {
@@ -111,7 +112,7 @@ class _VerificationState extends State<Verification> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const Login()));
+                        MaterialPageRoute(builder: (context) => const HomePage()));
                   },
                   child: Container(
                     margin: const EdgeInsets.only(top: 10),

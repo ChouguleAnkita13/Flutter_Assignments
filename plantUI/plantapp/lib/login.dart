@@ -44,6 +44,7 @@ class _LoginState extends State<Login> {
               color: Colors.white,
             ),
             child: TextFormField(
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                   prefixIcon: const Icon(
                     Icons.local_phone_outlined,

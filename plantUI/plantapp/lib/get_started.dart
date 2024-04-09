@@ -26,22 +26,29 @@ class GetStarted extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(left: 35),
             width: 249,
-            height: 88,
             alignment: Alignment.topLeft,
-            child: Text.rich(TextSpan(children: [
-              TextSpan(
-                text: "Enjoy your life with ",
-                style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        fontSize: 34, fontWeight: FontWeight.w400)),
-              ),
-              TextSpan(
-                text: "Plants",
-                style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        fontSize: 34, fontWeight: FontWeight.w600)),
-              ),
-            ])),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Enjoy your", style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 34, fontWeight: FontWeight.w400)),),
+                Text.rich(TextSpan(children: [
+                  TextSpan(
+                    text: "life with ",
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 34, fontWeight: FontWeight.w400)),
+                  ),
+                  TextSpan(
+                    text: "Plants",
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 34, fontWeight: FontWeight.w600)),
+                  ),
+                ])),
+              ],
+            ),
           ),
           GestureDetector(
             onTap: (){
