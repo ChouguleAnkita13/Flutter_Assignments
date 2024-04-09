@@ -55,7 +55,7 @@ class GetStarted extends StatelessWidget {
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Login()));
             },
             child: Container(
-              margin: const EdgeInsets.only(left: 10, top: 50),
+              margin: const EdgeInsets.only(left: 10, top: 40),
               width: 320,
               height: 50,
               decoration: BoxDecoration(

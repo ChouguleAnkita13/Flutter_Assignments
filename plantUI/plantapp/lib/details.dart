@@ -60,7 +60,7 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -71,7 +71,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           fontSize: 22, fontWeight: FontWeight.w600)),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 SizedBox(
                   height: 40,
@@ -86,7 +86,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 25,
                 ),
                 Container(
                     height: 200,

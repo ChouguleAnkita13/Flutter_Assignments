@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SizedBox(
-                  height: 400,
+                  height: 390,
                   child: ListView.separated(
                     itemCount: plantList.length,
                     itemBuilder: ((context, index) {
