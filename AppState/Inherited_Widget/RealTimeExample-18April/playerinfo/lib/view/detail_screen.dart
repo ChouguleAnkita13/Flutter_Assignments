@@ -1,14 +1,18 @@
-import 'package:assignment/view/skill_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../controller/inheritedwidget_controller.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key});
 
   @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  @override
   Widget build(BuildContext context) {
-    SharedData sharedDataObj = SharedData.of(context);
+    PlayerData playerDataObj = PlayerData.of(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -18,7 +22,7 @@ class DetailsScreen extends StatelessWidget {
               height: 100,
             ),
             const Text(
-              "Employee Details",
+              "Player Details",
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 23,
@@ -28,12 +32,13 @@ class DetailsScreen extends StatelessWidget {
               height: 50,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Employee Id  :",
+                      "Player Name  :",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
@@ -43,7 +48,7 @@ class DetailsScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "Employee Name  :",
+                      "Country  :",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
@@ -53,7 +58,7 @@ class DetailsScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "Username   :",
+                      "Team Name  :",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
@@ -68,7 +73,7 @@ class DetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${sharedDataObj.empObj.id}",
+                      playerDataObj.player.playerName,
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 18,
@@ -79,7 +84,7 @@ class DetailsScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      sharedDataObj.empObj.empName,
+                      playerDataObj.player.country,
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 18,
@@ -89,7 +94,7 @@ class DetailsScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      sharedDataObj.empObj.username,
+                      playerDataObj.player.teamName,
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 18,
@@ -104,13 +109,16 @@ class DetailsScreen extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const SkillScreen()));
+                  setState(() {
+                  playerDataObj.player.teamName="CSK";
+                    
+                  });
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(200, 40),
                     backgroundColor: Colors.green),
                 child: const Text(
-                  "Add Skills",
+                  "Change Team",
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,

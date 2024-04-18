@@ -1,6 +1,6 @@
-import 'package:assignment/controller/inheritedwidget_controller.dart';
-import 'package:assignment/model/employee.dart';
-import 'package:assignment/view/login_screen.dart';
+import 'package:playerinfo/controller/inheritedwidget_controller.dart';
+import 'package:playerinfo/model/player_model.dart';
+import 'package:playerinfo/view/info_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +12,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SharedData(
-    empObj: Employee(id: 101, empName: "Ankita", username: "ankitachougule"), 
-    child: const MyApp());
+    return PlayerData(
+        player: PlayerModel(
+          playerName: "Rohit Sharma",
+          country: "India",
+          teamName: "MI",
+        ),
+        child: const MyApp());
   }
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -28,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

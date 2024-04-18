@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../controller/inheritedwidget_controller.dart';
-import 'package:assignment/view/detail_screen.dart';
+import 'package:playerinfo/view/detail_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,22 +11,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController idController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
-  TextEditingController usernameController = TextEditingController();
+  final TextEditingController _countryController = TextEditingController();
+  final TextEditingController _pNameController = TextEditingController();
+  final TextEditingController _teamNameController = TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    SharedData sharedDataObj = SharedData.of(context);
+    PlayerData playerDataObj = PlayerData.of(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(
           children: [
             const Text(
-              "Login",
+              "Welcome",
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 23,
@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Employee Id",
+                        "Player Name",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 18,
@@ -55,13 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 40,
                         child: TextFormField(
-                          controller: idController,
+                          controller: _pNameController,
                           decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey))),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Please enter id";
+                              return "Please Enter Player Name";
                             }
                             return null;
                           },
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 20,
                       ),
                       const Text(
-                        "Employee Name",
+                        "Country",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 18,
@@ -83,13 +83,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 40,
                         child: TextFormField(
-                          controller: nameController,
+                          controller: _countryController,
                           decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey))),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Please enter name";
+                              return "Please Enter Country";
                             }
                             return null;
                           },
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 20,
                       ),
                       const Text(
-                        "Username",
+                        "Team Name",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 18,
@@ -111,13 +111,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 40,
                         child: TextFormField(
-                          controller: usernameController,
+                          controller: _teamNameController,
                           decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey))),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Please enter usename";
+                              return "Please Enter Team Name";
                             }
                             return null;
                           },
@@ -130,12 +130,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             bool isValidate = _formkey.currentState!.validate();
                             if (isValidate) {
-                              sharedDataObj.empObj.id =
-                                  int.parse(idController.text);
-                              sharedDataObj.empObj.empName =
-                                  nameController.text;
-                              sharedDataObj.empObj.username =
-                                  usernameController.text;
+                              playerDataObj.player.playerName =
+                                  _pNameController.text;
+                              playerDataObj.player.country =
+                                  _countryController.text;
+                              playerDataObj.player.teamName=
+                                  _teamNameController.text;
 
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => const DetailsScreen()));
