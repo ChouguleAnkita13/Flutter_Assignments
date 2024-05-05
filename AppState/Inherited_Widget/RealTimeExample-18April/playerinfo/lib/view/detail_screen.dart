@@ -79,7 +79,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         fontSize: 18,
                       ),
                     ),
-                    
                     const SizedBox(
                       height: 20,
                     ),
@@ -110,8 +109,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ElevatedButton(
                 onPressed: () {
                   setState(() {
-                  playerDataObj.player.teamName="CSK";
-                    
+                    playerDataObj.player.teamName = "CSK";
                   });
                 },
                 style: ElevatedButton.styleFrom(
