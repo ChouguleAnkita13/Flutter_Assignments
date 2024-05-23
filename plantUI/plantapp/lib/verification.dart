@@ -86,6 +86,11 @@ class _VerificationState extends State<Verification> {
                           ],
                           color: Colors.white,
                         ),
+                        child: const TextField(
+                          decoration: InputDecoration(border: InputBorder.none),
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                        ),
                       );
                     },
                   ),
@@ -111,8 +116,8 @@ class _VerificationState extends State<Verification> {
                 ])),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const HomePage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomePage()));
                   },
                   child: Container(
                     margin: const EdgeInsets.only(top: 10),
