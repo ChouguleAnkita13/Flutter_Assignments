@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
+// import 'dart:developer';
 
+import 'package:apibinding_modelclass/model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,8 +13,7 @@ class DisplayScreen extends StatefulWidget {
 }
 
 class _DisplayScreenState extends State<DisplayScreen> {
-  List<dynamic> empData = [];
-  Map singleEmpData = {};
+  List<Data> empData = [];
 
   void getEmployeeData() async {
     Uri url = Uri.parse("https://dummy.restapiexample.com/api/v1/employees");
@@ -26,11 +26,12 @@ class _DisplayScreenState extends State<DisplayScreen> {
     // log(responseData["message"]);
     // log("${responseData["data"]}");
 
+    EmployeeModel empModel=EmployeeModel(responseData);
+
     setState(() {
-      empData = responseData["data"];
+      empData = empModel.data!;
     });
 
-    log("$empData");
   }
 
   @override
@@ -40,11 +41,12 @@ class _DisplayScreenState extends State<DisplayScreen> {
             itemCount: empData.length,
             itemBuilder: (context, index) {
               return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(empData[index]["employee_name"]),
-                  Text("${empData[index]["employee_salary"]}"),
-                  Text("${empData[index]["employee_age"]}"),
+                  Text("${empData[index].empId}"),
+                  Text(empData[index].empName!),
+                  Text("${empData[index].empSal}"),
+                  Text("${empData[index].empAge}"),
                 ],
               );
             }),
