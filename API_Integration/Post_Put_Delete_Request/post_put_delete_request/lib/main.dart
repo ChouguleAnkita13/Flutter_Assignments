@@ -10,18 +10,31 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ElevatedButton(onPressed: (){
-                postEmployeeData();
-              },child: const Text("Post Data"),),
-              ElevatedButton(onPressed: (){},child: const Text("Put Data"),),
-              ElevatedButton(onPressed: (){},child: const Text("Delete Data"),),
-
+              ElevatedButton(
+                onPressed: () {
+                  postEmployeeData();
+                },
+                child: const Text("Post Data"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  updateEmployeeData();
+                },
+                child: const Text("Put Data"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  deleteEmployeeData();
+                },
+                child: const Text("Delete Data"),
+              ),
             ],
           ),
         ),
