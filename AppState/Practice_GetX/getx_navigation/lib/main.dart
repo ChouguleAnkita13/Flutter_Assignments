@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: const Home(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.purple,
       ),
