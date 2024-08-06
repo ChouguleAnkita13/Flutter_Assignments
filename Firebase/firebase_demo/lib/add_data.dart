@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_demo/showdata.dart';
 import 'package:flutter/material.dart';
 
 class AddData extends StatefulWidget {
@@ -15,7 +14,7 @@ class _AddDataState extends State<AddData> {
   TextEditingController nameController = TextEditingController();
   TextEditingController locController = TextEditingController();
 
-  addData(String name, String location) async {
+  Future<void> addData(String name, String location) async {
     if (name == "" && location == "") {
       log("Enter Required fields");
     } else {
@@ -28,6 +27,7 @@ class _AddDataState extends State<AddData> {
     }
   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,8 +58,7 @@ class _AddDataState extends State<AddData> {
               addData(nameController.text, locController.text);
               nameController.clear();
               locController.clear();
-              Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ShowData()));
+               Navigator.of(context).pop();
             }, child: const Text("Save Data")),
           ],
         ),
