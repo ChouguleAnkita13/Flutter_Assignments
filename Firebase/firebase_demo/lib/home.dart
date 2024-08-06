@@ -1,5 +1,7 @@
 import 'package:firebase_demo/add_data.dart';
+import 'package:firebase_demo/delete_data.dart';
 import 'package:firebase_demo/showdata.dart';
+import 'package:firebase_demo/update_data.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -29,6 +31,20 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const AddData()));
                 },
                 child: const Text("Add Data")),
+             const SizedBox(height: 10,),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const DeleteData()));
+                },
+                child: const Text("Delete Data")),
+                 const SizedBox(height: 10,),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const UpdateData()));
+                },
+                child: const Text("Update Data")),
           ],
         ),
       ),
