@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "985969014798",
+    "project_id": "flutter-demo-7baf8",
+    "storage_bucket": "flutter-demo-7baf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985969014798:android:cf4e5abcaadc592639645f",
+        "android_client_info": {
+          "package_name": "com.example.firebas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkBDjNmRxsyrrhzCjLmo0n7YPTRl4UEOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
