@@ -80,7 +80,7 @@ class NormalClass extends StatelessWidget {
   Widget build(BuildContext context) {
     log("In Normal build");
     return Consumer(builder: (context, value, child) {
-      log("In Normal Consumer");
+      log("In Normal Consumer...............");
       return Text("Runs:${Provider.of<Match>(context).runs}");
     });
   }
