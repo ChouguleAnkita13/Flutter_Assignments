@@ -6,7 +6,7 @@ class SkillScreen extends StatefulWidget {
   @override
   State<SkillScreen> createState() => _SkillScreenState();
 }
-s
+
 class _SkillScreenState extends State<SkillScreen> {
   List skillList = [];
   TextEditingController skillController = TextEditingController();
