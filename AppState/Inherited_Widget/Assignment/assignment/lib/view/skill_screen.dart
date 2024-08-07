@@ -6,12 +6,12 @@ class SkillScreen extends StatefulWidget {
   @override
   State<SkillScreen> createState() => _SkillScreenState();
 }
-
+s
 class _SkillScreenState extends State<SkillScreen> {
   List skillList = [];
   TextEditingController skillController = TextEditingController();
 
-  GlobalKey<FormFieldState> _skillkey = GlobalKey<FormFieldState>();
+  final GlobalKey<FormFieldState> _skillkey = GlobalKey<FormFieldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class _SkillScreenState extends State<SkillScreen> {
                               Border(bottom: BorderSide(color: Colors.grey))),
                       child: Text(
                         skillList[index],
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
                             color: Colors.black),
