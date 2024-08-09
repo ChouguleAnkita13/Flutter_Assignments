@@ -6,6 +6,7 @@ import 'package:getx_state_management/screens/second.dart';
 
 class First extends StatelessWidget {
   First({super.key});
+  //initialize
   final CountController countController = Get.put(CountController());
 
   @override
