@@ -36,6 +36,28 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void getDataFromFirebase() async {
+    QuerySnapshot<Map<String, dynamic>> response =
+        await FirebaseFirestore.instance.collection("Incubators").get();
+    // print(response.docs[1]);
+    studList.clear();
+    for (var value in response.docs) {
+      print(value.id);
+      studList.add(StudentModel(
+          name: value["name"], clgName: value["college"], id: value.id));
+    }
+    setState(() {});
+  }
+
+  void deleteDataFromFirebase(StudentModel studObj) {
+    FirebaseFirestore.instance
+        .collection("Incubators")
+        .doc(studObj.id)
+        .delete();
+    studList.remove(studObj);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +104,9 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                getDataFromFirebase();
+              },
               child: Container(
                 width: 300,
                 alignment: Alignment.center,
@@ -96,7 +120,14 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                FirebaseFirestore.instance
+                    .collection("Incubators")
+                    .doc(studList[0].id)
+                    .set({"name": "", "college": " clgController.text"});
+                setState(() {});
+                getDataFromFirebase();
+              },
               child: Container(
                 width: 300,
                 alignment: Alignment.center,
@@ -111,7 +142,9 @@ class _HomePageState extends State<HomePage> {
                   itemCount: studList.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        deleteDataFromFirebase(studList[index]);
+                      },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
