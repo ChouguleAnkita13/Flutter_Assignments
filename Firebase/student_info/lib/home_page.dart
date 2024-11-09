@@ -120,14 +120,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {
-                FirebaseFirestore.instance
-                    .collection("Incubators")
-                    .doc(studList[0].id)
-                    .set({"name": "", "college": " clgController.text"});
-                setState(() {});
-                getDataFromFirebase();
-              },
+              onTap: () {},
               child: Container(
                 width: 300,
                 alignment: Alignment.center,
