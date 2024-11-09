@@ -58,6 +58,15 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  void updateDataFromFirebase() {
+    FirebaseFirestore.instance
+        .collection("Incubators")
+        .doc(studList[0].id)
+        .set({"name": "Era", "college": "SITS"});
+    setState(() {});
+    getDataFromFirebase();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,7 +129,9 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                updateDataFromFirebase();
+              },
               child: Container(
                 width: 300,
                 alignment: Alignment.center,
