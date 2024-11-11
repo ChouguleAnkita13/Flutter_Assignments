@@ -40,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         print("${error.code}");
         print("${error.message}");
         CustomSnackbar.showCustomSnackbar(
-          message: error.message!,
+          message: error.code,
           context: context,
         );
       }

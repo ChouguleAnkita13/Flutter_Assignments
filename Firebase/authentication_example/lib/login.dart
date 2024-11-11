@@ -44,10 +44,15 @@ class _LoginScreenState extends State<LoginScreen> {
         print("${error.code}");
         print("${error.message}");
         CustomSnackbar.showCustomSnackbar(
-          message: error.message!,
+          message: error.code,
           context: context,
         );
       }
+    } else {
+      CustomSnackbar.showCustomSnackbar(
+        message: "Please enter valid fields",
+        context: context,
+      );
     }
   }
 
