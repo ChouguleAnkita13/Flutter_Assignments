@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyC0TIS-kK1JATCG1e_vIe4skySwNZhB--k",
+          appId: "1:163453163415:android:926b6a917405cdd2df16d2",
+          messagingSenderId: "163453163415",
+          projectId: "flutter-fire-auth-example"));
   runApp(const MainApp());
 }
 
