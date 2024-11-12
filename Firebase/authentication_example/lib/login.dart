@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:authentication_example/custom_snackbar.dart';
 import 'package:authentication_example/home_screen.dart';
 import 'package:authentication_example/register_screen.dart';
+import 'package:authentication_example/session_data_shared_pre.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -34,10 +35,15 @@ class _LoginScreenState extends State<LoginScreen> {
           password: _passwordTextEditingController.text.trim(),
         );
         log("USER CREDENTIALS :$userCredential");
+
+        /// SHARED PREFERENCE - Store Data
+        await SessionData.storeSessionData(
+            isLogin: true, email: userCredential.user!.email!);
         CustomSnackbar.showCustomSnackbar(
           message: "Login Successfully",
           context: context,
         );
+
         Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (context) =>
                 HomeScreen(email: userCredential.user!.email!)));
