@@ -38,8 +38,9 @@ class _LoginScreenState extends State<LoginScreen> {
           message: "Login Successfully",
           context: context,
         );
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const HomeScreen()));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) =>
+                HomeScreen(email: userCredential.user!.email!)));
       } on FirebaseAuthException catch (error) {
         print("${error.code}");
         print("${error.message}");
