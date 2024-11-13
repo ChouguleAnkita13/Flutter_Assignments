@@ -3,6 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SessionData {
   static bool? isLogin;
   static String? email;
+
+  ///Function to store Data in shared prefernce
+  ///Here we are storing login and email
   static Future<void> storeSessionData(
       {required bool isLogin, required String email}) async {
     ///INSTANCE OF SHARED PREFERENCES
@@ -16,6 +19,7 @@ class SessionData {
     getSessionData();
   }
 
+  ///Function to Get Data from shared prefernce
   static Future<void> getSessionData() async {
     ///INSTANCE OF SHARED PREFERENCES
     final sharedPreferences = await SharedPreferences.getInstance();

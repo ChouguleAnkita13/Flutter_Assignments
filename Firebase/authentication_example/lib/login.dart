@@ -24,6 +24,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   bool _showPassword = false;
 
+  ///FUNCTION TO CHECK LOGIN DETAILES FROM FIREBASE
+  ///USING FIREBASE AUTHENTICATION
   void loginFunction() async {
     if (_emailTextEditingController.text.trim().isNotEmpty &&
         _passwordTextEditingController.text.trim().isNotEmpty) {
@@ -39,6 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
         /// SHARED PREFERENCE - Store Data
         await SessionData.storeSessionData(
             isLogin: true, email: userCredential.user!.email!);
+
+        ///Snackbar
         CustomSnackbar.showCustomSnackbar(
           message: "Login Successfully",
           context: context,
@@ -50,12 +54,17 @@ class _LoginScreenState extends State<LoginScreen> {
       } on FirebaseAuthException catch (error) {
         print("${error.code}");
         print("${error.message}");
+
+        ///Snackbar
+
         CustomSnackbar.showCustomSnackbar(
           message: error.code,
           context: context,
         );
       }
     } else {
+      ///Snackbar
+
       CustomSnackbar.showCustomSnackbar(
         message: "Please enter valid fields",
         context: context,

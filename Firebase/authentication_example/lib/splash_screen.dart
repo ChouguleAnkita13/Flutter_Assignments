@@ -11,6 +11,10 @@ class SplashScreen extends StatelessWidget {
       /// SHARED PREFERENCE - Get Data
       await SessionData.getSessionData();
       print("IS LOGIN : ${SessionData.isLogin!}");
+
+      ///IF ISLOGIN IS TRUE MEANS USER IS ALREADY LOGIN THEN
+      ///NAVIGATE TO HOME PAGE WITH ALREADY LOGED IN EMAIL ID
+      ///ELSE GO TO LOGIN PAGE
       if (SessionData.isLogin!) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(

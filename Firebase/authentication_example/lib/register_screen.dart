@@ -20,6 +20,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   bool _showPassword = false;
 
+  ///FUNCTION TO STORE REGISTERATION DETAILES INFIREBASE
+  ///USING FIREBASE AUTHENTICATION
   void registerUser() async {
     if (_emailTextEditingController.text.trim().isNotEmpty &&
         _passwordTextEditingController.text.trim().isNotEmpty) {
@@ -31,6 +33,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           password: _passwordTextEditingController.text.trim(),
         );
         log("USER CREDENTIALS :$userCredential");
+
+        ///SNACKBAR
         CustomSnackbar.showCustomSnackbar(
           message: "User Register Successfully",
           context: context,
@@ -39,6 +43,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       } on FirebaseAuthException catch (error) {
         print("${error.code}");
         print("${error.message}");
+
+        ///SNACKBAR
         CustomSnackbar.showCustomSnackbar(
           message: error.code,
           context: context,
