@@ -1,10 +1,11 @@
 import 'dart:convert';
-import 'dart:developer';
+// import 'dart:developer';
 
+import 'package:api_binding_example/todo_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiController {
-  static Future<Map<String, dynamic>> getDataFromApi() async {
+  static Future<TodoModel> getDataFromApi() async {
     ///HTTP.GET(URL) REQUIRES URL AND OUR LINK IS IN STRING FORMAT
     ///SO WE PARSE THAT STRING IN URL
 
@@ -18,7 +19,10 @@ class ApiController {
     // log(response.body);
 
     Map<String, dynamic> responseData = json.decode(response.body);
-    return responseData;
     // log("${responseData["total"]}");
+
+    ///COVERT THE RESPONSE DATA MAP INTO MODEL CLASS
+    TodoModel todoModel = TodoModel(responseData);
+    return todoModel;
   }
 }
