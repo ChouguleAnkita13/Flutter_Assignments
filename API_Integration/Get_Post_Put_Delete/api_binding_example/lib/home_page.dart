@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:api_binding_example/api_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,7 +18,13 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            ElevatedButton(onPressed: () {}, child: const Text("Get Data")),
+            ElevatedButton(
+                onPressed: () async {
+                  Map todo = await ApiController.getDataFromApi();
+                  List todoList = todo["todos"];
+                  log("$todoList");
+                },
+                child: Text("Get Data")),
             ElevatedButton(onPressed: () {}, child: const Text("Post Data")),
             ElevatedButton(onPressed: () {}, child: const Text("Delete Data")),
             ElevatedButton(onPressed: () {}, child: const Text("Update Data")),
