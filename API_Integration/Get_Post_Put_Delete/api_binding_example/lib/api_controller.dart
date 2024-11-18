@@ -38,4 +38,21 @@ class ApiController {
       return TodoModel({});
     }
   }
+
+  static Future<void> postData() async {
+    try {
+      Uri url = Uri.parse("https://dummyjson.com/todos/add");
+      Map<String, dynamic> mapData = {
+        'todo': 'Use DummyJSON in the project',
+        'completed': false,
+        'userId': 5,
+      };
+      http.Response responseData =
+          await http.post(url, body: json.encode(mapData));
+      print(responseData.statusCode);
+      // print(responseData.messaage);
+    } catch (error) {
+      print(error);
+    }
+  }
 }
