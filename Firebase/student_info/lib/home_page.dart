@@ -143,36 +143,33 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                   itemCount: studList.length,
                   itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 15, horizontal: 20),
-                        margin: const EdgeInsets.symmetric(vertical: 15),
-                        width: 300,
-                        alignment: Alignment.center,
-                        color: Colors.grey[400],
-                        child: Column(
-                          children: [
-                            Text(studList[index].name),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Text(studList[index].clgName),
-                            Row(children: [
-                              GestureDetector(
-                                  onTap: () {
-                                    deleteDataFromFirebase(studList[index]);
-                                  },
-                                  child: const Icon(Icons.delete)),
-                              GestureDetector(
-                                  onTap: () {
-                                    updateDataFromFirebase(studList[index]);
-                                  },
-                                  child: const Icon(Icons.edit))
-                            ])
-                          ],
-                        ),
+                    return Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(vertical: 15),
+                      width: 300,
+                      alignment: Alignment.center,
+                      color: Colors.grey[400],
+                      child: Column(
+                        children: [
+                          Text(studList[index].name),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text(studList[index].clgName),
+                          Row(children: [
+                            GestureDetector(
+                                onTap: () {
+                                  deleteDataFromFirebase(studList[index]);
+                                },
+                                child: const Icon(Icons.delete)),
+                            GestureDetector(
+                                onTap: () {
+                                  updateDataFromFirebase(studList[index]);
+                                },
+                                child: const Icon(Icons.edit))
+                          ])
+                        ],
                       ),
                     );
                   }),
