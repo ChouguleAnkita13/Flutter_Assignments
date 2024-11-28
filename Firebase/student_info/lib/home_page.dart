@@ -58,13 +58,13 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  void updateDataFromFirebase() {
+  void updateDataFromFirebase(StudentModel studObj) {
     FirebaseFirestore.instance
         .collection("Incubators")
-        .doc(studList[0].id)
-        .set({"name": "Era", "college": "SITS"});
-    setState(() {});
+        .doc(studObj.id)
+        .set({"name": nameController.text, "college": clgController.text});
     getDataFromFirebase();
+    setState(() {});
   }
 
   @override
@@ -129,9 +129,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             GestureDetector(
-              onTap: () {
-                updateDataFromFirebase();
-              },
+              onTap: () {},
               child: Container(
                 width: 300,
                 alignment: Alignment.center,
@@ -146,9 +144,7 @@ class _HomePageState extends State<HomePage> {
                   itemCount: studList.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () {
-                        deleteDataFromFirebase(studList[index]);
-                      },
+                      onTap: () {},
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
@@ -163,6 +159,18 @@ class _HomePageState extends State<HomePage> {
                               height: 20,
                             ),
                             Text(studList[index].clgName),
+                            Row(children: [
+                              GestureDetector(
+                                  onTap: () {
+                                    deleteDataFromFirebase(studList[index]);
+                                  },
+                                  child: const Icon(Icons.delete)),
+                              GestureDetector(
+                                  onTap: () {
+                                    updateDataFromFirebase(studList[index]);
+                                  },
+                                  child: const Icon(Icons.edit))
+                            ])
                           ],
                         ),
                       ),
