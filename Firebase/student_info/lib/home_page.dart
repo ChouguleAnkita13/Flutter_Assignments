@@ -128,17 +128,6 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 20,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: 300,
-                alignment: Alignment.center,
-                color: Colors.green,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                child: const Text("Update Data"),
-              ),
-            ),
             Expanded(
               child: ListView.builder(
                   itemCount: studList.length,
