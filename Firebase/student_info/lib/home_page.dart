@@ -13,6 +13,11 @@ class _HomePageState extends State<HomePage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController clgController = TextEditingController();
   List<StudentModel> studList = [];
+  @override
+  void initState() {
+    super.initState();
+    getDataFromFirebase();
+  }
 
   void addDataToFirebase() {
     if (nameController.text.trim().isNotEmpty &&
