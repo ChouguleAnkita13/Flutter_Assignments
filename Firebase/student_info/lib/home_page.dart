@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
       ));
       nameController.clear();
       clgController.clear();
+      getDataFromFirebase();
     } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("Please fill the required fields"),
