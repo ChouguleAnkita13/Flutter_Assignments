@@ -115,22 +115,7 @@ class _HomePageState extends State<HomePage> {
                 child: const Text("Add Data"),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () {
-                getDataFromFirebase();
-              },
-              child: Container(
-                width: 300,
-                alignment: Alignment.center,
-                color: Colors.green,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                child: const Text("Get Data"),
-              ),
-            ),
+           
             const SizedBox(
               height: 20,
             ),
