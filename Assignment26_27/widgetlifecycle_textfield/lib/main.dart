@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:widgetlifecycle_textfield/textfield_assignment26.dart';
 // import 'package:widgetlifecycle_textfield/widgetlifecycle.dart';
 
-
-
 void main() {
   runApp(const MainApp());
 }
@@ -17,14 +15,12 @@ class MainApp extends StatelessWidget {
       // home: const WidgetLifeCycleDemo(),
       home: const TextFieldDemo(),
       theme: ThemeData(
-        textTheme: const TextTheme(
-          displayMedium: TextStyle(
-            color: Colors.black,
-            fontSize: 17,fontWeight: FontWeight.bold)
-          )
-        ),
+          textTheme: const TextTheme(
+              displayMedium: TextStyle(
+                  color: Colors.black,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold))),
       debugShowCheckedModeBanner: false,
-      
     );
   }
 }
