@@ -41,13 +41,12 @@ class _HomePageState extends State<HomePage> {
                       log("${todoList[0].todo}");
                     },
                     child: const Text("Get Data")),
-                ElevatedButton(
-                    onPressed: () {
-                      ApiController.postData();
-                    },
-                    child: const Text("Post Data")),
-                ElevatedButton(
-                    onPressed: () {}, child: const Text("Delete Data")),
+                const ElevatedButton(
+                    onPressed: ApiController.postData,
+                    child: Text("Post Data")),
+                const ElevatedButton(
+                    onPressed: ApiController.deleteData,
+                    child: Text("Delete Data")),
                 const ElevatedButton(
                     onPressed: ApiController.updateData,
                     child: Text("Update Data")),

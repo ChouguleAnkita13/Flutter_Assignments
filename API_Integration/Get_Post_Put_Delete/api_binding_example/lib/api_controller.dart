@@ -74,4 +74,17 @@ class ApiController {
       print(error);
     }
   }
+
+  static Future<void> deleteData() async {
+    try {
+      Uri url = Uri.parse("https://dummyjson.com/todos/1");
+
+      http.Response responseData =
+          await http.delete(url, headers: {'Content-Type': 'application/json'});
+      print(responseData.statusCode);
+      print(responseData.body);
+    } catch (error) {
+      print(error);
+    }
+  }
 }
