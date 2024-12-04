@@ -48,8 +48,9 @@ class _HomePageState extends State<HomePage> {
                     child: const Text("Post Data")),
                 ElevatedButton(
                     onPressed: () {}, child: const Text("Delete Data")),
-                ElevatedButton(
-                    onPressed: () {}, child: const Text("Update Data")),
+                const ElevatedButton(
+                    onPressed: ApiController.updateData,
+                    child: Text("Update Data")),
               ],
             ),
             Expanded(

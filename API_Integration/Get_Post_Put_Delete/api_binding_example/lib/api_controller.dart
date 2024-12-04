@@ -56,4 +56,22 @@ class ApiController {
       print(error);
     }
   }
+
+  static Future<void> updateData() async {
+    try {
+      Uri url = Uri.parse("https://dummyjson.com/todos/1");
+      Map<String, dynamic> mapData = {
+        'todo': 'Use DummyJSON in the project',
+        'completed': true,
+        'userId': 5,
+      };
+      http.Response responseData = await http.put(url,
+          body: json.encode(mapData),
+          headers: {'Content-Type': 'application/json'});
+      print(responseData.statusCode);
+      print(responseData.body);
+    } catch (error) {
+      print(error);
+    }
+  }
 }
