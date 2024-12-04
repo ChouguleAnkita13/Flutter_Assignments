@@ -6,8 +6,8 @@ import 'package:http/http.dart' as http;
 class ApiController {
   static Future<TodoModel> getDataFromApi() async {
     try {
-      ///HTTP.GET(URL) REQUIRES URL AND OUR LINK IS IN STRING FORMAT
-      ///SO WE PARSE THAT STRING IN URL
+      ///HTTP.GET(URI) REQUIRES URI AND OUR LINK IS IN STRING FORMAT
+      ///SO WE PARSE THAT STRING IN URI
       /// PARSE THE STRING URL INTO URI FORMAT FOR HTTP GET REQUEST
       Uri url = Uri.parse("https://dummyjson.com/todos");
       http.Response response = await http.get(url);

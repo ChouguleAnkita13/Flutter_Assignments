@@ -58,7 +58,9 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) => Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: ListTile(
-                            tileColor: Colors.amber[100],
+                            tileColor: todoList[index].completed!
+                                ? Colors.yellow.withOpacity(0.2)
+                                : Colors.yellow.withOpacity(0.5),
                             contentPadding: const EdgeInsets.all(10),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
