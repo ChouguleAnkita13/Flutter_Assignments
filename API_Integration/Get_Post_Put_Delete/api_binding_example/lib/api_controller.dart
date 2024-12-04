@@ -50,10 +50,10 @@ class ApiController {
       http.Response responseData = await http.post(url,
           body: json.encode(mapData),
           headers: {'Content-Type': 'application/json'});
-      print(responseData.statusCode);
-      print(responseData.body);
+      log("${responseData.statusCode}");
+      log(responseData.body);
     } catch (error) {
-      print(error);
+      log("$error");
     }
   }
 
@@ -68,10 +68,10 @@ class ApiController {
       http.Response responseData = await http.put(url,
           body: json.encode(mapData),
           headers: {'Content-Type': 'application/json'});
-      print(responseData.statusCode);
-      print(responseData.body);
+      log("${responseData.statusCode}");
+      log(responseData.body);
     } catch (error) {
-      print(error);
+      log("$error");
     }
   }
 
@@ -81,10 +81,10 @@ class ApiController {
 
       http.Response responseData =
           await http.delete(url, headers: {'Content-Type': 'application/json'});
-      print(responseData.statusCode);
-      print(responseData.body);
+      log("${responseData.statusCode}");
+      log(responseData.body);
     } catch (error) {
-      print(error);
+      log("$error");
     }
   }
 }
