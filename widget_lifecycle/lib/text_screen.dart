@@ -14,6 +14,7 @@ class TextScreen extends StatefulWidget {
 class _TextScreenState extends State<TextScreen> {
   ///THIS METHOD GET CALLED WHEN PARENT WIDGET CHANGES ITS CONFIGURATION
   ///AND REQUIRES THE WIDGET TO REBUILD
+  ///IT RECEIVES OLDWIDGET AS AN ARGUMENTS ALLOWING YOU TO COMPAIR WITH NEW WIDGET
   @override
   void didUpdateWidget(TextScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
