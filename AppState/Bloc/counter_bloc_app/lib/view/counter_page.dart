@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:counter_bloc_app/controller/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +24,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
+    log("In build");
     return Scaffold(
         appBar: AppBar(
           title: const Text("Counter Page"),
@@ -36,12 +39,14 @@ class _CounterPageState extends State<CounterPage> {
             listenWhen: (previous, current) => current is CounterActionState,
             buildWhen: (previous, current) => current is! CounterActionState,
             listener: (context, state) {
+              log("In Listener");
               if (state is CounterShowSnackbarActionState) {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(const SnackBar(content: Text("Snackbar")));
               }
             },
             builder: (context, state) {
+              log("In builder");
               switch (state.runtimeType) {
                 case const (CounterIncrementState):
                   final successState = state as CounterIncrementState;
