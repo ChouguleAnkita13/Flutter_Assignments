@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:student_info/student_model.dart';
@@ -48,7 +50,7 @@ class _HomePageState extends State<HomePage> {
     // print(response.docs[1]);
     studList.clear();
     for (var value in response.docs) {
-      print(value.id);
+      log(value.id);
       studList.add(StudentModel(
           name: value["name"], clgName: value["college"], id: value.id));
     }
@@ -115,7 +117,6 @@ class _HomePageState extends State<HomePage> {
                 child: const Text("Add Data"),
               ),
             ),
-           
             const SizedBox(
               height: 20,
             ),
