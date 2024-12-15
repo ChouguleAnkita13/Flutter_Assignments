@@ -61,9 +61,11 @@ class _CounterPageState extends State<CounterPage> {
                           ),
                           ElevatedButton(
                               onPressed: () {
+                                counterBloc.add(CounterIncrementevent());
+
                                 counterBloc.add(CounterShowSnackbarEvent());
                               },
-                              child: const Text('Snackbar'))
+                              child: const Text('Show'))
                         ],
                       ),
                     ),
