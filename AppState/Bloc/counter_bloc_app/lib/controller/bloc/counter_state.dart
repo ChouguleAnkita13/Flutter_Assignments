@@ -15,5 +15,3 @@ class CounterIncrementState extends CounterState {
     required this.val,
   });
 }
-
-class CounterIncrementActionState extends CounterState {}

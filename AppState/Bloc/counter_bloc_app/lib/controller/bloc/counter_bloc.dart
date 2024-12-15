@@ -19,7 +19,6 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
       CounterIncrementevent event, Emitter<CounterState> emit) {
     value = value + 1;
     emit(CounterIncrementState(val: value));
-    // emit(CounterIncrementActionState());
   }
 
   FutureOr<void> counterShowSnackbarEvent(
