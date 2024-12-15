@@ -1,3 +1,4 @@
+/// part of: Connects this file to the counter_bloc.dart file.
 /// Part directive specifies that this file is part of another library or file.
 /// In this case, it belongs to the 'counter_bloc.dart' file.
 part of 'counter_bloc.dart';
