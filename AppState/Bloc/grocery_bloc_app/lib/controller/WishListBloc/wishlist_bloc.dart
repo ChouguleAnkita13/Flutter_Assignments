@@ -13,7 +13,7 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
 
   WishlistBloc() : super(WishlistInitialState()) {
     ///Registering Event Handlers
-
+    /// A [StateError] will be thrown if there are multiple event handlers registered for the same type Event.
     on<WishlistInitialEvent>(wishlistInitialEvent);
     on<WishlistRemoveItemFromWishlistEvent>(
         wishlistRemoveItemFromWishlistEvent);
