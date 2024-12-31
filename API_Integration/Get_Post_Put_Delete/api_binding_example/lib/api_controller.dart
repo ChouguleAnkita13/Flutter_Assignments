@@ -3,6 +3,14 @@ import 'dart:developer';
 import 'package:api_binding_example/todo_model.dart';
 import 'package:http/http.dart' as http;
 
+///We can directly use get,post,put,delete,patch function without giving them aliases which declares above as http
+///i.e we can call directly like get(URI) instead of http.get(URI) bcz get,post,put,delete,patch etc function are
+///directly in http package
+///still we take aliases bcz in dart code we can write get,post,put,delete,patch etc function and at the
+///same time we can use api binding with http's get,post,put,delete,patch function directly without aliases
+///then ambugity will be there
+///So that we use aliases to avoid ambugity
+
 class ApiController {
   static Future<TodoModel> getDataFromApi() async {
     try {
